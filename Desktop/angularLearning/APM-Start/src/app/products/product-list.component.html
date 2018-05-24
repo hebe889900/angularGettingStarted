@@ -37,15 +37,15 @@
                         <td>
                             <img *ngIf = 'showImage'
                                 [src] = 'product.imageUrl'
-                                [title] = 'product.productName'
+                                [title] = 'product.productName | uppercase'
                                 [style.width.px] = 'imageWidth'
                                 [style.margin.px] = 'imageMargin'
                             >
                         </td>
-                        <td>{{ product.productName}}</td>
+                        <td>{{ product.productName | lowercase}}</td>
                         <td>{{ product.productCode}}</td>
                         <td>{{ product.releaseDate}}</td>
-                        <td>{{ product.price}}</td>
+                        <td>{{ product.price | currency:'USD' : true:'1.2-2'}}</td>
                         <td>{{ product.starRating}}</td>
                     </tr>
             </table>
